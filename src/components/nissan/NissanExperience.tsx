@@ -3,6 +3,7 @@ import { useProgress } from "@react-three/drei";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
+import { Volume2, VolumeX } from "lucide-react";
 import { ANNOTATIONS, type HotspotId, type ScreenPoint } from "./scene-data";
 
 const NissanScene = lazy(() => import("./NissanScene"));
@@ -315,7 +316,9 @@ export default function NissanExperience() {
             aria-pressed={soundOn}
             aria-label={soundOn ? "Mute sound" : "Unmute sound"}
           >
-            <span className="sound-bars" aria-hidden="true"><i /><i /><i /></span>
+            <span className="sound-icon" aria-hidden="true">
+              {soundOn ? <Volume2 size={16} /> : <VolumeX size={16} />}
+            </span>
             <span className="sound-label">{soundOn ? "SOUND ON" : "SOUND OFF"}</span>
           </button>
         </div>

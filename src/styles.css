@@ -234,13 +234,7 @@ button { font: inherit; }
   transition: color .25s ease;
 }
 .sound-toggle:hover, .sound-toggle.is-on { color: var(--color-foreground); }
-.sound-bars { display: flex; align-items: flex-end; gap: 2.5px; height: 11px; }
-.sound-bars i { width: 2px; height: 4px; background: currentColor; transition: height .3s ease; }
-.sound-toggle.is-on .sound-bars i { animation: sound-bounce .9s ease-in-out infinite alternate; }
-.sound-toggle.is-on .sound-bars i:nth-child(1) { animation-delay: 0s; }
-.sound-toggle.is-on .sound-bars i:nth-child(2) { animation-delay: .22s; }
-.sound-toggle.is-on .sound-bars i:nth-child(3) { animation-delay: .44s; }
-@keyframes sound-bounce { from { height: 3px; } to { height: 11px; } }
+.sound-icon { display: flex; align-items: center; justify-content: center; width: 16px; height: 16px; }
 
 @media (max-width: 767px) {
   .sound-label { display: none; }
