@@ -67,8 +67,10 @@ export const DESKTOP_SHOTS: Shot[] = [
 
 export const MOBILE_SHOTS: Shot[] = DESKTOP_SHOTS.map((shot) => ({
   ...shot,
-  position: [shot.position[0] * 1.08, Math.max(shot.position[1], 0.75), shot.position[2] * 1.06],
-  fov: Math.min(48, shot.fov + 6),
+  // Keep the camera inside the garage bounds (same X/Z as desktop, just slightly lifted if too low)
+  position: [shot.position[0], Math.max(shot.position[1], 0.85), shot.position[2]],
+  // Rely entirely on a wider Field of View (FOV) to fit the car horizontally
+  fov: Math.min(75, shot.fov + 28),
   bank: 0,
 }));
 
